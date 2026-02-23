@@ -8,7 +8,7 @@
 using namespace std;
 
 int findHighestScore(const array<int, 50>& arr);
-int findAvgScore(const array<int, 50>& arr);
+double findAvgScore(const array<int, 50>& arr);
 
 int main() {
     const int MAX_AMOUNT{50};
@@ -37,7 +37,7 @@ int findHighestScore(const array<int, 50>& arr) {
     return highest;
 }
 
-int findAvgScore(const array<int, 50>& arr) {
-    int avgScore{accumulate(arr.begin(), arr.end(), 0)};
-    return avgScore;
+double findAvgScore(const array<int, 50>& arr) {
+    double sumInitial{0.0};
+    return accumulate(arr.begin(), arr.end(), sumInitial) / arr.size();
 }

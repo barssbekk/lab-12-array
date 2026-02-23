@@ -3,8 +3,12 @@
 #include <array>
 #include <fstream>
 #include <algorithm>
+#include <numeric>
 
 using namespace std;
+
+int findHighestScore(const array<int, 50>& arr);
+int findAvgScore(const array<int, 50>& arr);
 
 int main() {
     const int MAX_AMOUNT{50};
@@ -18,23 +22,22 @@ int main() {
     for (int& score : leaderboard)  // To input data into array
         fileInput >> score;
 
-    for (int i : leaderboard)
-        cout << i << '\n';
-
-    sort(leaderboard.begin(), leaderboard.end());
-
-    cout << "Sorted:";
-    for (int i : leaderboard)
-        cout << i << '\n';
+    cout << "Highest score: " << findHighestScore(leaderboard) << '\n';
+    cout << "Average score: " << findAvgScore(leaderboard);
 
     return 0;
 }
 
 int findHighestScore(const array<int, 50>& arr) {
     int highest{arr.front()};
-    for (int i : arr) {
+    for (const int i : arr) {
         if (i > highest)
             highest = i;
     }
     return highest;
+}
+
+int findAvgScore(const array<int, 50>& arr) {
+    int avgScore{accumulate(arr.begin(), arr.end(), 0)};
+    return avgScore;
 }

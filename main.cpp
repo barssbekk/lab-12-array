@@ -9,6 +9,7 @@ using namespace std;
 
 int findHighestScore(const array<int, 50>& arr);
 double findAvgScore(const array<int, 50>& arr);
+int findLowestScore(const array<int, 50>& arr);
 
 int main() {
     const int MAX_AMOUNT{50};
@@ -23,13 +24,18 @@ int main() {
         fileInput >> score;
 
     cout << "Highest score: " << findHighestScore(leaderboard) << '\n';
-    cout << "Average score: " << findAvgScore(leaderboard);
+    cout << "Lowest score: " << findLowestScore(leaderboard) << '\n';
+    cout << "Average score: " << findAvgScore(leaderboard) << '\n';
 
     return 0;
 }
 
 int findHighestScore(const array<int, 50>& arr) {
     return *max_element(arr.begin(), arr.end());
+}
+
+int findLowestScore(const array<int, 50>& arr) {
+    return *min_element(arr.begin(), arr.end());
 }
 
 double findAvgScore(const array<int, 50>& arr) {

@@ -4,6 +4,7 @@
 #include <fstream>
 #include <algorithm>
 #include <numeric>
+#include <iomanip>
 
 using namespace std;
 
@@ -26,6 +27,7 @@ int main() {
 
     cout << "Highest score: " << findHighestScore(leaderboard) << '\n';
     cout << "Lowest score: " << findLowestScore(leaderboard) << '\n';
+    cout << fixed << setprecision(2);
     cout << "Average score: " << findAvgScore(leaderboard) << '\n';
     cout << "Median score: " << findMedianScore(leaderboard) << '\n';
 

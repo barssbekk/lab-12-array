@@ -10,6 +10,7 @@ using namespace std;
 int findHighestScore(const array<int, 50>& arr);
 double findAvgScore(const array<int, 50>& arr);
 int findLowestScore(const array<int, 50>& arr);
+double findMedianScore(array<int, 50> arr);
 
 int main() {
     const int MAX_AMOUNT{50};
@@ -26,6 +27,7 @@ int main() {
     cout << "Highest score: " << findHighestScore(leaderboard) << '\n';
     cout << "Lowest score: " << findLowestScore(leaderboard) << '\n';
     cout << "Average score: " << findAvgScore(leaderboard) << '\n';
+    cout << "Median score: " << findMedianScore(leaderboard) << '\n';
 
     return 0;
 }
@@ -43,12 +45,12 @@ double findAvgScore(const array<int, 50>& arr) {
     return accumulate(arr.begin(), arr.end(), sumInitial) / arr.size();
 }
 
-double findMedianScore(array<int, 50>& arr) {
-    double meadian{0.0};
+double findMedianScore(array<int, 50> arr) {
     sort(arr.begin(), arr.end());
+    size_t middle{arr.size() / 2};
     if (arr.size() % 2 == 0) {
-
+        return (arr.at(middle - 1) + arr.at(middle)) / 2.0;
     } else {
-        meadian = arr.size(accumulate(arr.begin(), arr.end(), 0.0) / 2)
+        return arr.at(middle);
     }
 }

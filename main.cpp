@@ -6,13 +6,17 @@
 using namespace std;
 
 int main() {
-    const int maxAmount{50};
+    const int MAX_AMOUNT{50};
     ifstream fileInput{"data.txt"};
     if (!fileInput) {
         cerr << "File not found";
         return 1;
     }
 
-    array<int, maxAmount> leaderboard{};
+    array<int, MAX_AMOUNT> leaderboard{};
+    for (int score : leaderboard) {
+        fileInput >> score;
+    }
+
     return 0;
 }

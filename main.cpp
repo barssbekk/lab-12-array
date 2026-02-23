@@ -14,9 +14,17 @@ int main() {
     }
 
     array<int, MAX_AMOUNT> leaderboard{};
-    for (int score : leaderboard) {
+    for (int& score : leaderboard)  // To input data into array
         fileInput >> score;
-    }
+
+    for (int i : leaderboard)
+        cout << i << '\n';
+
+    sort(leaderboard.begin(), leaderboard.end());
+
+    cout << "Sorted:";
+    for (int i : leaderboard)
+        cout << i << '\n';
 
     return 0;
 }

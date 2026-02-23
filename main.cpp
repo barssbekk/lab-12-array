@@ -29,12 +29,7 @@ int main() {
 }
 
 int findHighestScore(const array<int, 50>& arr) {
-    int highest{arr.front()};
-    for (const int i : arr) {
-        if (i > highest)
-            highest = i;
-    }
-    return highest;
+    return *max_element(arr.begin(), arr.end());
 }
 
 double findAvgScore(const array<int, 50>& arr) {

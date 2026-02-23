@@ -2,6 +2,7 @@
 #include <iostream>
 #include <array>
 #include <fstream>
+#include <algorithm>
 
 using namespace std;
 
@@ -27,4 +28,13 @@ int main() {
         cout << i << '\n';
 
     return 0;
+}
+
+int findHighestScore(const array<int, 50>& arr) {
+    int highest{arr.front()};
+    for (int i : arr) {
+        if (i > highest)
+            highest = i;
+    }
+    return highest;
 }

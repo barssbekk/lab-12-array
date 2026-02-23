@@ -42,3 +42,13 @@ double findAvgScore(const array<int, 50>& arr) {
     double sumInitial{0.0};
     return accumulate(arr.begin(), arr.end(), sumInitial) / arr.size();
 }
+
+double findMedianScore(array<int, 50>& arr) {
+    double meadian{0.0};
+    sort(arr.begin(), arr.end());
+    if (arr.size() % 2 == 0) {
+
+    } else {
+        meadian = arr.size(accumulate(arr.begin(), arr.end(), 0.0) / 2)
+    }
+}
